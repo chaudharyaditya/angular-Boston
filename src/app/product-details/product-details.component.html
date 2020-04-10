@@ -1,0 +1,27 @@
+<p>
+product-details works!
+</p>
+
+<div *ngIf="product">
+  <h3>{{ product.name }}</h3>
+  <h4>{{ product.price | currency }}</h4>
+  <p>{{ product.description }}</p>
+
+<button (click)="addToCart(product)">  
+  Add To Cart
+</button>
+  
+</div>
+
+
+<div>
+  <button routerLink="/">
+    Back to Product List
+  </button>
+
+</div>
+
+<div class="cart-item" *ngFor="let item of items">
+  <span>{{ item.name }}</span>
+  <span>{{ item.price | currency }}</span>
+</div>
